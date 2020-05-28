@@ -35,7 +35,7 @@
             <li class="empty">Сканирование</li>
           </ul>
           <transition-group name="scans" tag="ul">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
+            <li class="resultQR" v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
           </transition-group>
         </section>
       <div class="preview-container">
@@ -43,5 +43,6 @@
       </div>
     </div>
     <script type="text/javascript" src="public/js/qrScan.js"></script>
+    <script type="text/javascript" src="public/js/getQRscanner.js"></script>
   </body>
 </html>

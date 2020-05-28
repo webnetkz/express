@@ -4,6 +4,22 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 8vh);
+    width: 100vw;
+    animation: showContent 1s linear;
+}
+@keyframes showContent {
+    0% {
+        left: -100vh;
+    }
+    50% {
+        left: 0;
+    }
+}
 footer {
     display: flex;
     justify-content: space-around;

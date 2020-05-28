@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
+    <section id="content">
+
+    </section>
     <footer>
-        <img src="public/img/QRScan.png" alt="" class="menuItem">
+        <img src="public/img/QRScan.png" alt="" class="menuItem" id="go">
         <img src="public/img/QRScan.png" alt="" class="menuItem">
         <img src="public/img/QRScan.png" alt="" class="menuItem">
         <img src="public/img/QRScan.png" alt="" class="menuItem">

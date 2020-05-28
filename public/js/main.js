@@ -1,1 +1,1 @@
-﻿appendScript('getQRscanner', 'go');
+﻿

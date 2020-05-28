@@ -11,7 +11,7 @@
 
     </section>
     <footer>
-        <img src="public/img/QRScan.png" alt="" class="menuItem" id="go">
+        <img src="public/img/QRScan.png" alt="" class="menuItem" id="go" onclick="window.location.href = 'qrscanner.html'">
         <img src="public/img/QRScan.png" alt="" class="menuItem">
         <img src="public/img/QRScan.png" alt="" class="menuItem">
         <img src="public/img/QRScan.png" alt="" class="menuItem">

@@ -35,6 +35,7 @@
             <li class="empty">Сканирование</li>
           </ul>
           <transition-group name="scans" tag="ul">
+            <input type="text" v-for="scan in scans" :key="scan.date" :title="scan.content" value='{{scan.content}}'>
             <li class="resultQR" v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
           </transition-group>
         </section>

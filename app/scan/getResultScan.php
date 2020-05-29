@@ -3,7 +3,6 @@
     require_once '../dataBase/connectDB.php';
 
     $scan = $_POST['scan'];
-    $scan = 'DWE12345678904';
 
     $sql = 'SELECT * FROM dispatch WHERE qr_name = "'.$scan.'"';
     $result = $pdo->query($sql);

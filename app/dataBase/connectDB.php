@@ -3,7 +3,7 @@
     // Данные для подключения к базе данных
     $driver = 'mysql';
     $host = 'localhost';
-    $db_name = 'easyfin';
+    $db_name = 'express';
     $db_user = 'root';
     $db_pass = '';
     $charset = 'utf8';

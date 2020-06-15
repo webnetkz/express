@@ -71,7 +71,7 @@
 								messagesBlock.innerHTML = resultQuery;
 							}
 						}
-						xhr.send('scan=' + content);
+						xhr.send('name=' + content);
 					}
 					getResultScan();
 		  

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>QRScan</title>
-    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script type="text/javascript" src="public/js/coreQRscan.min.js"></script>
 	<style>
 		#preview {
 			width: 100vw;

@@ -10,9 +10,9 @@
 		}
 		#goScan {
 			position: fixed;
-			top: 90vh;
+			top: 80vh;
 			left: 35vw;
-			font-size: 2em;
+			font-size: 4em;
             padding: 7px;
             border: none;
             border-radius: 8px;

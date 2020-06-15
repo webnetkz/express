@@ -8,7 +8,7 @@
 </head>
 <body>
     <section id="content">
-        <button class="btn">Войти</button>
+        <button class="btn" style="width: 50%; margin-left: 25%; margin-top: 40%;" onclick="location.href = 'sign.php'">Войти</button>
     </section>
     <footer>
 

@@ -8,7 +8,7 @@
 </head>
 <body>
     <section id="content">
-        reg
+        <button class="btn">Войти</button>
     </section>
     <footer>
 

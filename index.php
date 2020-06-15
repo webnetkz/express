@@ -8,14 +8,10 @@
 </head>
 <body>
     <section id="content">
-
+        
     </section>
     <footer>
-        <img src="public/img/QRScan.png" alt="" class="menuItem" id="go" onclick="window.location.href = 'scan.php'">
-        <img src="public/img/QRScan.png" alt="" class="menuItem">
-        <img src="public/img/QRScan.png" alt="" class="menuItem">
-        <img src="public/img/QRScan.png" alt="" class="menuItem">
-        <img src="public/img/QRScan.png" alt="" class="menuItem">
+
     </footer>
     <script src="public/js/es6.js"></script>
     <script src="public/js/main.js"></script>

@@ -5,14 +5,12 @@
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 	<style>
 		#preview {
-            position: relative;
-            left: -10px;
 			width: 100vw;
 			height: 100vh;
 		}
 		#goScan {
 			position: fixed;
-			top: 80vh;
+			top: 90vh;
 			left: 35vw;
 			font-size: 4em;
             padding: 7px;
@@ -29,8 +27,7 @@
 			position: fixed;
 			top: 100px;
 			left: 10px;
-            font-size: 2em;
-            text-align: center;
+			font-size: 1.2em;
 		}
 	</style>
   </head>
@@ -59,7 +56,7 @@
 
 						var xhr = new XMLHttpRequest();
 
-						xhr.open('POST', '/app/scan/sign.php');
+						xhr.open('POST', '/app/scan/getResultScan.php');
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 						xhr.onreadystatechange = function() {
@@ -71,7 +68,7 @@
 								messagesBlock.innerHTML = resultQuery;
 							}
 						}
-						xhr.send('name=' + content);
+						xhr.send('scan=' + content);
 					}
 					getResultScan();
 		  

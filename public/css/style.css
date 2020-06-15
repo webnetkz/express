@@ -16,8 +16,9 @@ body {
     left: 5px;
     right: 5px;
     bottom: 5px;
-    height: calc(100% - 8%);
-    width: 100vw;
+    width: calc(100vw - 10px);
+    border-radius: 13px;
+    background-color: rgb(255, 255, 255);
 }
 footer {
     display: flex;

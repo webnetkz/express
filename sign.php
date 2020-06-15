@@ -5,6 +5,8 @@
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 	<style>
 		#preview {
+            position: relative;
+            left: -10px;
 			width: 100vw;
 			height: 100vh;
 		}
@@ -27,7 +29,8 @@
 			position: fixed;
 			top: 100px;
 			left: 10px;
-			font-size: 1.2em;
+            font-size: 2em;
+            text-align: center;
 		}
 	</style>
   </head>
@@ -56,7 +59,7 @@
 
 						var xhr = new XMLHttpRequest();
 
-						xhr.open('POST', '/app/scan/getResultScan.php');
+						xhr.open('POST', '/app/scan/sign.php');
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 						xhr.onreadystatechange = function() {

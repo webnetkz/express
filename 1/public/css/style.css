@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 8%);
+    width: 100vw;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    height: 8%;
+    width: 100vw;
+    top: calc(100% - 8%);
+    left: 0;
+    background: linear-gradient(89deg,#1697bf 3%,#68cef5 98%);
+    box-shadow: 0 0 10px rgb(88, 88, 88);
+}
+.menuItem {
+    height: 6vh;
+    margin-top: 1vh;
+}

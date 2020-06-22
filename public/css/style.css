@@ -4,10 +4,18 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+.hidden, .filter, .manifest {
+   display: none;
+}
+.visible {
+   display: block;
+}
 body {
     font-family: sans-serif;
     background-color: rgb(240, 240, 240);
     box-sizing: border-box;
+	overflow-x: hidden;
+	color: rgb(50, 50, 50);
 }
 #content {
     box-sizing: border-box;
@@ -21,6 +29,8 @@ body {
     background-color: rgb(255, 255, 255);
     padding: 30px;
     box-shadow: 0 0 5px rgb(188, 188, 188);
+	overflow-y: auto;
+	overflow-x: none;
 }
 footer {
     display: flex;
@@ -34,8 +44,8 @@ footer {
     box-shadow: 0 0 10px rgb(88, 88, 88);
 }
 .menuItem {
-    height: 6vh;
-    margin-top: 1vh;
+    height: 4vh;
+    margin-top: 2vh;
 }
 .btn {
     padding: 7px;
@@ -47,4 +57,64 @@ footer {
     text-align: center;
     min-width: 30vw;
     outline: none;
+}
+.inp {
+	padding: 5px;
+	border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+	width: 100%;
+}
+.showParcel {
+	padding: 5px;
+	margin: 2px;
+	border: 1px solid rgb(200, 200, 200);
+}
+#showParcels {
+	margin-top: 10px;
+}
+.contentBlock {
+	width: 98%;
+	border: 1px solid rgb(200, 200, 200);
+	padding: 10px;
+	border-radius: 13px;
+	text-align: center;
+}
+#res {
+	display: none;
+}
+.info {
+	padding: 5px 0px;
+}
+.infoDes {
+	font-weight: 700;
+}
+.getAction {
+	position: relative;
+	left: -15px;
+	transition-duration: 600ms;
+	width: 110%;
+	transform: scale(1.05);
+}
+.addGetAction {
+
+}
+.miniImg {
+	padding:5px;
+	border: 1px solid rgb(200, 200, 200);
+	border-radius: 6px;
+	margin-left: 5px;
+}
+.statusRed {
+	border-right: 5px solid red;
+}
+.statusGreen {
+	border-right: 5px solid green;
+}
+.statusYellow {
+	border-right: 5px solid Yellow;
+}
+.statusBlue {
+	border-right: 5px solid Blue;
 }

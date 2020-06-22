@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(!empty($_SESSION['name'])) {
+		header('Location: ../index.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +14,7 @@
 </head>
 <body>
     <section id="content">
-        <button class="btn" style="width: 50%; margin-left: 25%; margin-top: 40%;" onclick="location.href = 'sign.php'">Войти</button>
+        <button class="btn" style="width: 50%; margin-left: 25%; margin-top: 40%;" onclick="location.href = 'scan.php'">Войти по QR</button>
     </section>
     <footer>
 

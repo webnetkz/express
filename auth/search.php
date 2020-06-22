@@ -1,13 +1,22 @@
+<?php
+
+	session_start();
+	if(empty($_SESSION['name'])) {
+		header('Location: ../index.php');
+	}
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <title>QRScan</title>
-    <script type="text/javascript" src="scan.min.js"></script>
-	<link rel="stylesheet" href="public/css/scan.css">
+    <script type="text/javascript" src="../scan.min.js"></script>
+	<link rel="stylesheet" href="../public/css/scan.css">
   </head>
   <body>
 	<video id="preview"></video>
 	<h1 class="messages"></h1>
+	<div class="scanBlock"></div>
 	<button id="goScan">Повторить</button>
     <script type="text/javascript">
 	  let opts = {
@@ -25,25 +34,8 @@
 		  
 		  console.log(content);
 		  scanner.stop();
-		  
-		  			function getResultScan() {
-
-						var xhr = new XMLHttpRequest();
-
-						xhr.open('POST', '/app/scan/sign.php');
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-						xhr.onreadystatechange = function() {
-							if(xhr.readyState === 4 && xhr.status === 200) {
-								let resultQuery = xhr.responseText;
-
-								let messagesBlock = document.querySelector('.messages');
-								messagesBlock.innerHTML = resultQuery;
-							}
-						}
-						xhr.send('name=' + content);
-					}
-					getResultScan();
+		  location.href = 'parcel.php?track='+content;
+		  			
 		  
 		  
 		  document.getElementById('goScan').onclick = function() {

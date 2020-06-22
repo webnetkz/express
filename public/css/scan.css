@@ -1,0 +1,54 @@
+.btn {
+	padding: 7px;
+	border: none;
+	border-radius: 8px;
+	background-color: rgb(74, 74, 74);
+	box-shadow: 0 0 5px rgb(188, 188, 188);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	min-width: 30vw;
+	outline: none;
+}
+#preview {
+	position: relative;
+	left: -5px;
+	width: 100vw;
+	height: 100vh;
+}
+#goScan {
+	position: fixed;
+	top: 80vh;
+	left: 35vw;
+	font-size: 2em;
+	padding: 7px;
+	border: none;
+	border-radius: 8px;
+	background-color: rgb(74, 74, 74);
+	box-shadow: 0 0 5px rgb(188, 188, 188);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	min-width: 30vw;
+	outline: none;
+}
+.messages:not(:empty) {
+	width: 100vw;
+	height: 10vh;
+	padding-top: 10px;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 5px;
+	font-size: 2em;
+	color: rgb(0, 0, 0);
+	background: rgb(78, 78, 78);
+	color: rgb(255, 255, 255);
+}
+.scanBlock {
+	position: fixed;
+	z-index: 9999999999999;
+	height: 80vw;
+	width: 80vw;
+	top: 20vh;
+	left: 10vw;
+	border: 2px solid yellow;
+}

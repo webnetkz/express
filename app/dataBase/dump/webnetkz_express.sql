@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: srv-pleskdb28.ps.kz:3306
--- Время создания: Июн 22 2020 г., 05:58
--- Версия сервера: 10.2.32-MariaDB
--- Версия PHP: 7.3.17
+-- Хост: 127.0.0.1:3306
+-- Время создания: Июн 22 2020 г., 10:39
+-- Версия сервера: 10.3.13-MariaDB-log
+-- Версия PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -372,6 +373,7 @@ INSERT INTO `manifests` (`id`, `qr_code`, `fromDate`, `country`, `city`, `seal`,
 CREATE TABLE `users` (
   `id` int(13) UNSIGNED NOT NULL,
   `name` varchar(55) NOT NULL,
+  `pass` varchar(255) NOT NULL,
   `role` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -379,8 +381,9 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `role`) VALUES
-(1, 'dwexpress', 0);
+INSERT INTO `users` (`id`, `name`, `pass`, `role`) VALUES
+(1, 'dwexpress', 'pass123', 0),
+(2, 'guangzhou', 'password258456', 6);
 
 --
 -- Индексы сохранённых таблиц
@@ -430,7 +433,7 @@ ALTER TABLE `manifests`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(13) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(13) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

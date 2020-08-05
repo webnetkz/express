@@ -56,11 +56,6 @@
 					<input type="text" id="toCity" name="toCity" class="inp" placeholder="Город" autocomplete="off" required>
 <!--=================================================/ Citys END Manifest /=================================================-->
 						<hr style="margin-top: 5px; margin-bottom: 5px;">
-<!--=================================================/ QR code START Manifest /=================================================-->
-					<label for="qr">QR code: </label>
-					<input type="text" id="qr" name="qr" class="inp" placeholder="QR code" autocomplete="off" required>
-<!--=================================================/ QR code END Manifest /=================================================-->
-						<hr style="margin-top: 5px; margin-bottom: 5px;">
 <!--=================================================/ Seal START Manifest /=================================================-->
 					<label for="seal">Пломба: </label>
 					<input type="text" id="seal" name="seal" class="inp" placeholder="Пломба" autocomplete="off" required>
@@ -76,7 +71,7 @@
 		<div id="showParcels">
 			<?php
 				foreach($res as $k => $v) {
-					echo "<p class='showParcel' onclick='addNewParcelForManifest(this);'>".$v['qr_code']."</p>";
+					echo "<p class='showParcel' onclick='showManifest(this);'>".$v['qr_name']."</p>";
 				}
 			?>
 		</div>
@@ -87,10 +82,9 @@
 		let strGET = window.location.search.replace( '?', '');
 		let track = strGET.slice(6);
 		
-		function addNewParcelForManifest(elem) {
+		function showManifest(elem) {
 			let manifest = elem;
-			console.log(manifest);
-			
+			location.href = 'manifest.php?manifest='+elem.textContent;
 		}
 	</script>
     <script src="../public/js/main.js"></script>

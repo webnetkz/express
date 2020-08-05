@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if(!empty($_SESSION['name'])) {
-		header('Location: ../index.php');
+	if( !empty($_SESSION['name']) ) {
+		header('Location: auth/index.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -14,12 +14,10 @@
 </head>
 <body>
     <section id="content">
-        <button class="btn" style="width: 50%; margin-left: 25%; margin-top: 40%;" onclick="location.href = 'scan.php'">Войти по QR</button>
         <form action="app/libs/sign/signin.php" method="POST">
-            <p style="text-align: center; margin-top: 15px;">Войти по логину</p>
-            <input name="login" type="text" class="inp" style="margin: 10px 0;" placeholder="Логин" required>
+            <input name="login" type="text" class="inp" style="margin: 10px 0;" placeholder="Логин" required autocomplete="off">
             <input name="pass" type="password" class="inp" style="margin: 10px 0;" placeholder="Пароль" required>
-            <button class="btn" style="width: 50%; margin-left: 25%;" type="submit" name="sing">Войти</button>
+            <button class="btn" style="width: 50%; margin-left: 25%;" type="submit" name="sing" value="sign">Войти</button>
         </form>
     </section>
     <footer>

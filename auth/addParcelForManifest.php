@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(empty($_SESSION['name'])) {
+	if( empty($_SESSION['name']) ) {
 		header('Location: ../index.php');
 	}
 	require_once "../app/dataBase/connectDB.php";	
@@ -24,7 +24,7 @@
 		<div id="showParcels">
 			<?php
 				foreach($res as $k => $v) {
-					echo "<p class='showParcel' onclick='addNewParcelForManifest(this);'>".$v['qr_code']."</p>";
+					echo "<p class='showParcel' onclick='addNewParcelForManifest(this);'>".$v['qr_name']."</p>";
 				}
 			?>
 		</div>

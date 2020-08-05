@@ -34,14 +34,14 @@ function getAction(elem) {
 	// Добовляем в контейнер кнопку просмотра QR code
 	addGetAction.appendChild(showAdd);
 	
-	// Создаем кнопку принятия посылки
+	/*// Создаем кнопку принятия посылки
 	let showAccept = document.createElement('img');
 	showAccept.setAttribute('src', '../public/img/showAction/download.png');
 	showAccept.setAttribute('id', val);
 	showAccept.setAttribute('onclick', "acceptParcel(this.id)");
 	showAccept.classList.add('miniImg');
 	// Добовляем в контейнер кнопку принятия посылки
-	addGetAction.appendChild(showAccept);
+	addGetAction.appendChild(showAccept);*/
 	
 	
 	// Добовляем контейнер с кнопками навигации в блок посылки
@@ -62,7 +62,7 @@ function showQR(elem) {
 function addManifest(elem) {
 	location.href = 'addParcelForManifest.php?track='+elem;
 }
-// Добавление посылки в манифест
+// Принятие посылки
 function acceptParcel(elem) {
 	location.href = '../../auth/acceptParcel.php?track='+elem;
 }

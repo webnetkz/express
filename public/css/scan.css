@@ -17,7 +17,22 @@
 }
 #goScan {
 	position: fixed;
-	top: 80vh;
+	top: 83vh;
+	left: 35vw;
+	font-size: 2em;
+	padding: 7px;
+	border: none;
+	border-radius: 8px;
+	background-color: rgb(74, 74, 74);
+	box-shadow: 0 0 5px rgb(188, 188, 188);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	min-width: 30vw;
+	outline: none;
+}
+#changeCam {
+	position: fixed;
+	top: 75vh;
 	left: 35vw;
 	font-size: 2em;
 	padding: 7px;

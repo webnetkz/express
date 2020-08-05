@@ -1,11 +1,6 @@
 <?php
 
-	session_start();
-	if(empty($_SESSION['name'])) {
-		header('Location: ../index.php');
-	}
-
-	require_once '../app/dataBase/connectDB.php';
+	require_once '../app/libs/sign/privileges.php';
 
 	if(!empty($_GET['track'])) {
 		$sql = 'SELECT * FROM dispatch WHERE qr_name = "'.$_GET['track'].'"';
@@ -57,19 +52,44 @@
 			if($res) {
 				echo '<p class="info"><span class="infoDes">Трек номер: </span>' .$res['qr_name'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Дата создания: </span>' .$res['fromDate'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Страна: </span>' .$res['fromCountrie'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Город: </span>' .$res['fromCity'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Адрес: </span>' .$res['fromAdres'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Котакты: </span>' .$res['fromContacts'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Телефон: </span>' .$res['fromPhone'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Страна отправления: </span>' .$res['fromCountrie'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Город отправления: </span>' .$res['fromCity'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Адрес отправления: </span>' .$res['fromAdres'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Котакты отправителя: </span>' .$res['fromContacts'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Телефон отправителя: </span>' .$res['fromPhone'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Страна: </span>' .$res['toCountrie'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Область: </span>' .$res['obl'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Город: </span>' .$res['toCity'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Почтовый индекс: </span>' .$res['toZipcode'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Адрес: </span>' .$res['toAdres'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Котакты: </span>' .$res['toContacts'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Телефон: </span>' .$res['toPhone'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Статус: </span>' .$res['status'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Статус: </span>' .$res['status'].'</p>';
+				if(!empty($_SESSION['privileges'] == 0)) {
+					echo '<form action="../app/querys/newStatus.php" style="margin: 10px;>
+							<label for="status">Статус: </label>
+							<select class="inp" id="status" name="status">
+								<option>Новая</option>
+								<option>Прибыла на склад/Ожидает оплаты</option>
+								<option>Отправление готово к отправке</option>
+								<option>Отправлена в страну назначения</option>
+								<option>Прибыла в сортировочный центр страны назначения</option>
+								<option>Идет вручение адресату</option>
+								<option>Доставлена адресату</option>
+								<option>Неудачная попытка вручения</option>
+							</select>
+							<input type="hidden" name="track" value="'.$res['qr_name'].'">
+							<button type="submit" name="send" value="send" class="btn" style="margin-top: 5px;">Изменить</button>
+						</form>';
+				}
+				echo '<hr>';
 				echo '<p class="info"><span class="infoDes">Манифест: </span>' .$res['manifest'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Примичание: </span>' .$res['prim'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Описание: </span>' .$res['description'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Обьявленая стоимость: </span>' .$res['price'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Упаковка: </span>' .$res['pack'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Фото отчет: </span>' .$res['photo'].'</p><hr>';
+				echo '<p class="info"><span class="infoDes">Kuaidi: </span>' .$res['kuaidi'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Трек 2: </span>' .$res['code2'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Трек 3: </span>' .$res['code3'].'</p><hr>';
 			} else {

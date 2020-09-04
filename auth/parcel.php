@@ -55,6 +55,14 @@
 				echo '<p class="info"><span class="infoDes">Страна отправления: </span>' .$res['fromCountrie'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Город отправления: </span>' .$res['fromCity'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Адрес отправления: </span>' .$res['fromAdres'].'</p><hr>';
+				if(!empty($_SESSION['privileges'] == 0)) {
+					echo '<form action="../app/querys/newMass.php" style="margin: 10px;>
+							<label for="mass">Вес: </label>
+							<input type="text" class="inp" id="mass" name="mass" value="'.$res['mass'].'">
+							<input type="hidden" name="track" value="'.$res['qr_name'].'">
+							<button type="submit" name="send" value="send" class="btn" style="margin-top: 5px;">Изменить</button>
+						</form>';
+				}
 				echo '<p class="info"><span class="infoDes">Котакты отправителя: </span>' .$res['fromContacts'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Телефон отправителя: </span>' .$res['fromPhone'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Страна: </span>' .$res['toCountrie'].'</p><hr>';
@@ -84,7 +92,6 @@
 				}
 				echo '<hr>';
 				echo '<p class="info"><span class="infoDes">Манифест: </span>' .$res['manifest'].'</p><hr>';
-				echo '<p class="info"><span class="infoDes">Примичание: </span>' .$res['prim'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Описание: </span>' .$res['description'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Обьявленая стоимость: </span>' .$res['price'].'</p><hr>';
 				echo '<p class="info"><span class="infoDes">Упаковка: </span>' .$res['pack'].'</p><hr>';
